@@ -1,6 +1,6 @@
 repository=grafana
 
-.PHONY: deploy remove build push
+.PHONY: deploy remove logs
 
 deploy:
 	mkdir -p /var/docker/${repository}/data
