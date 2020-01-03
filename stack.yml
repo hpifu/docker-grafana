@@ -15,21 +15,10 @@ services:
       - "/var/docker/grafana/conf/grafana.ini:/etc/grafana/grafana.ini:ro"
     environment:
       GF_SECURITY_ADMIN_PASSWORD_FILE: /run/secrets/admin_password
-    networks:
-      - grafananet
-      - influxdbnet
-      - elasticsearchnet
-      - smtpnet
     user: "1000"
+    networks:
+      - online
 networks:
-  grafananet:
-    name: grafananet
-  influxdbnet:
+  online:
     external: true
-    name: influxdbnet
-  elasticsearchnet:
-    external: true
-    name: elasticsearchnet
-  smtpnet:
-    external: true
-    name: smtpnet
+    name: online
